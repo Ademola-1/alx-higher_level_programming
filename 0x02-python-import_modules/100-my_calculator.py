@@ -6,20 +6,18 @@ if __name__ == "__main__":
     numArgs = len(argv)
     if numArgs != 4:
         print("Usage: ./100-my-calculator.py <a> <operator> <b>")
-        exit (1)
-    
+        exit(1) 
     a = int(argv[1])
     op = argv[2]
     b = int(argv[3])
-    match op:
-        case '+':
+    if op == '+':
             print("{} {} {} = {}".format(a, op, b, add(a, b)))
-        case '-':
+    elif op == '-':
             print("{} {} {} = {}".format(a, op, b, sub(a, b)))
-        case '*':
+    elif op == '*':
             print("{} {} {} = {}".format(a, op, b, mul(a, b)))
-        case '/':
+    elif op == '/':
             print("{} {} {} = {}".format(a, op, b, div(a, b)))
-        case _:
+    else:
             print("Unknown opeartor. Available operators: +, -, *, /")
             exit(1)
